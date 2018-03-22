@@ -4,9 +4,9 @@
     Add a new course
   </h1>
   <%= simple_form_for @course, url: instructor_courses_path do |f| %>
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :cost %>
+    <%= f.input :title, error: 'Title must be specified' %>
+    <%= f.input :description, error: 'Description must be set' %>
+    <%= f.input :cost, error: 'Cost must contain a number' %>
     <br />
     <%= f.submit "Create", class: 'btn btn-primary' %>
     <br />
