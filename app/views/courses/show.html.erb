@@ -5,18 +5,16 @@
   </h1>
   <%= image_tag @course.image, class: 'img-fluid' %>
   <br />
-  <div class="row">
-    <div class="col-sm-4 col-12 text-center">
+  <div class="row course-row">
+    <div class="col-sm-3 col-12 text-center description">
       <span class="badge badge-default">
         <%= number_to_currency @course.cost %>
       </span>
       <% if current_user && current_user == @course.user %>
         <br />
-        <br />
-        <%= link_to 'Administer', instructor_course_path(@course), class: 'btn btn-danger btn-large' %>
+        <%= link_to 'Administer', instructor_course_path(@course), class: 'btn btn-danger btn-large administ' %>
       <% end %>
       
-      <br />
       <br />
       <% if current_user %>
         <% if current_user.enrolled_in?(@course) %>
@@ -43,14 +41,14 @@
         </h3>
       <% end %>
     </div>
-    <div class="col-sm-8 col-12">
+    <div class="col-sm-9 col-12">
       <%= @course.description %>
     </div>
   </div>
   
   <div class="col-12">
     <% @course.sections.rank(:row_order).each do |section| %>
-    <br /><br />
+    <br />
       <div class="section">
         <h3>
           <%= section.title %>

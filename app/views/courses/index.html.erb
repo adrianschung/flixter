@@ -6,19 +6,33 @@
   <hr />
   
   <% @courses.each do |course| %>
-    <h2 class="text-center">
-      <%= link_to course.title, course_path(course) %>
-    </h2>
-    <%= image_tag course.image, class: 'img-fluid' %>
-    <br />
-    <div class="row">
-      <div class="col-sm-8 col-12">
-        <%= course.description %>
+    <div class="course-box">
+      <h2 class="text-center">
+        <%= link_to course.title, course_path(course) %>
+      </h2>
+      <div class="text-center course-image">
+        <%= image_tag course.image, class: 'img-fluid' %>
       </div>
-      <div class="col-sm-4 col-12 text-center">
-        <%= link_to 'More details...', course_path(course), class: 'btn btn-praimary btn-large' %>
+      <div class="row">
+        <div class="col-sm-8 col-12 description">
+          <%= course.description %>
+          <p class="more-details" align="right">
+            <%= link_to 'More details...', course_path(course), class: 'btn btn-praimary btn-large' %>
+          </p>
+        </div>
+        
+        <div class="col-sm-4 col-12">
+          <% if course.cost == 0 %>
+              Cost: Free
+          <% else %>
+              Cost: <%= number_to_currency(course.cost) %>
+          <% end %>
+          <br>
+          By: <%= course.user.email %>
+        </div>
       </div>
     </div>
-    <br class="clr" />
+    <hr class="course-hr">
+
   <% end %>
 </div>
