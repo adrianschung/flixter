@@ -1,24 +1,12 @@
-# README
+# Flixter
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Flixter is a video hosting app that allows users to both create and enroll in instructional lessons.
 
-Things you may want to cover:
+Users are able to:
+* create their own courses
+* upload videos for their course
+* setup a cost for each course (or none at all)
+* reorganize their sections/lessons
+* enroll in free courses or pay through stripe
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+View the application [here](https://flixter-adrian-chung.herokuapp.com/)
