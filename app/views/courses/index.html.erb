@@ -16,10 +16,9 @@
         <div class="col-sm-8 col-12 description">
           <%= course.description %>
           <p class="more-details" align="right">
-            <%= link_to 'More details...', course_path(course), class: 'btn btn-praimary btn-large' %>
+            <%= link_to 'More details...', course_path(course), class: 'btn btn-primary btn-large' %>
           </p>
         </div>
-        
         <div class="col-sm-4 col-12">
           <% if course.cost == 0 %>
               Cost: Free
@@ -32,4 +31,5 @@
       </div>
     </div>
   </div>
+  <br>
 <% end %>
