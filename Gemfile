@@ -49,7 +49,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.3.1'
 gem 'simple_form'
 gem 'devise'
 gem 'carrierwave', '~> 1.0'
